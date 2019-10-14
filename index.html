@@ -5,30 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./assets/styles.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>Code Quiz</title>
 </head>
 
 <body>
-    <nav><a href=#>View Highscores</a>
-        <div>
-            <p>Time: <span id="counter">0</span></p>
-        </div>
-    </nav>
-
     <div id="container">
+        <nav>
+            <div class="nav-links">
+                <p id="view-highscore">View Highscores</p>
+                <div>
+                    <p>Time: <span id="counter">0</span></p>
+                </div>
+            </div>
+        </nav>
         <h3 id="question">Coding Quiz Challege</h3>
-        <div id="answers">
-            <p>Try to answer following code-related questions within the time limit.
+        <div id="choices">
+            <div id="welcome-text">Try to answer following code-related questions within the time limit.
                 Keep in mind that incorrect answers will penalize your scoretime by 10 seconds
-            </p>
+            </div>
         </div>
-        <div class="button-set"> 
+        <div id="credentials" style="display:none">Enter Name: <input type="text" id="initials"><br>
+            <button id="submit">Submit</button>
+        </div>
+        <div id="highscore" style="display:none">
+            <ul id="list"></ul>
+            <button id="go-back">Go Back</button>
+            <button id="clear">Clear Highscores</button>
+        </div>
+        <div class="button-set">
             <button id="start-quiz">Start Quiz</button>
+            <div class="modal ">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h2 id="modal-text"></h2>
+                    <p id="modal-subtext"></p>
+                    <button id="close-btn">Close</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>
-<script src="./assets/questions.js"></script>
-<script src="./assets/script.js"></script>
+<script src="./assets/javascript/questions.js"></script>
+<script src="./assets/javascript/script.js"></script>
 
 </html>
