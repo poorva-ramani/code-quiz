@@ -59,7 +59,8 @@ function viewHighScore() {
 //timer/score calculator
 function startTimer() {
   var timeInterval = setInterval(function () {
-    if (i === questions.length - 1) {
+    if (i === questions.length) {
+      console.log("I am here");
       addScores();
       clearInterval(timeInterval);
     }
@@ -93,7 +94,7 @@ function outputScore() {
   //clear High scores
   clear.addEventListener('click', function() {
     localStorage.clear();
-    list.remove(); 
+    list.style.display="none";
     welcomeText.style.display="none";
     question.textContent="No High Scores Available right now!!"
   });
@@ -108,7 +109,7 @@ function addScores() {
     var restoredScores = JSON.parse(localStorage.getItem('highScores'));
     restoredScores.obj.push({
       name: initials.value,
-      score: timer.toString()
+      score: (timer+1).toString()
     });
     localStorage.setItem('highScores', JSON.stringify(restoredScores));
     outputScore();
@@ -149,8 +150,10 @@ function playQuiz() {
     li.addEventListener("click", function (event) {
       console.log(i);
       verifyAnswer(event, i);
+      if (i<questions.length){
       i++;
       playQuiz();
+      }
     });
   }
 }
