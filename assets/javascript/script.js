@@ -37,7 +37,7 @@ function toggleModal() {
   modal.classList.toggle("show-modal");
 }
 
-//starting page
+//Starting page
 function quiz() {
   startQuiz.addEventListener("click", function () {
     startTimer();
@@ -45,6 +45,7 @@ function quiz() {
   });
 }
 
+//Making View High score link at the nav bar functional
 function viewHighScore() {
   viewHighscore.addEventListener("click", function () {
     choiceSet.style.display="none";
@@ -56,7 +57,7 @@ function viewHighScore() {
   });
 }
 
-//timer/score calculator
+//Timer and score calculator
 function startTimer() {
   var timeInterval = setInterval(function () {
     if (i === questions.length) {
@@ -91,7 +92,7 @@ function outputScore() {
   welcomeText.style.display= "none";
   question.textContent="High Scores List";
 
-  //clear High scores
+//clear High scores
   clear.addEventListener('click', function() {
     localStorage.clear();
     list.style.display="none";
@@ -118,6 +119,7 @@ function addScores() {
 
 //Answer verification and messaging
 function verifyAnswer(event, i) {
+  //if answer is correct
   if (event.target.textContent == questions[i].answer) {
     modalText.style.color = "green";
     modalText.textContent = "✨ Correct Answer !!  ✨";
@@ -127,6 +129,7 @@ function verifyAnswer(event, i) {
     closeBtn.addEventListener("click", toggleModal);
     timer = timer + 15;
   }
+  //if answer is wrong
   else {
     modalText.style.color = "red";
     modalText.textContent = "✨ Wrong Answer !!  ✨";
@@ -138,6 +141,7 @@ function verifyAnswer(event, i) {
   }
 }
 
+//loop to render questions one by one
 function playQuiz() {
   welcomeText.textContent = "";
   credentials.style.display = "none";
@@ -158,6 +162,7 @@ function playQuiz() {
   }
 }
 
+//restart the quiz 
 function goBack() {
   goBackBtn.addEventListener("click", function () {
     // question.style.display="block";
