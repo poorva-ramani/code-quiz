@@ -133,7 +133,7 @@ function verifyAnswer(event, i) {
   else {
     modalText.style.color = "red";
     modalText.textContent = "✨ Wrong Answer !!  ✨";
-    modalSubtext.textContent = 'Correct Answer is "' + questions[i].answer.toUpperCase() + '". \n You will be penalized in your scoretime by 10 seconds';
+    modalSubtext.textContent = 'Correct Answer is "' + questions[i].answer.toUpperCase() + '". You will be penalized in your scoretime by 15 seconds';
     this.onclick = toggleModal();
     closeButton.addEventListener("click", toggleModal);
     closeBtn.addEventListener("click", toggleModal);
